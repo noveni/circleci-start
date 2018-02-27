@@ -8,10 +8,14 @@ jobs:
             - checkout
             - run: npm install
             - run: npm run build
+            - persist_to_workspace:
+                root: dist
     deploy:
         machine: true
         working_directory: ~/circleci-start
         steps:
+            - attach_workspace:
+                at: /circleci-start/dist
             - checkout
             - run: pwd && ls ./dist
             # - run: cat ./dist/index.html
