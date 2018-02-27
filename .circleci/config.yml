@@ -13,6 +13,7 @@ jobs:
                 paths: .
     deploy:
         machine: true
+        working_directory: ~/circleci-start
         steps:
             - attach_workspace:
                 at: dist
