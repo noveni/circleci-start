@@ -23,7 +23,7 @@ jobs:
             - attach_workspace:
                 at: tmp
             - run: pwd && ls -a
-            # - run: cd dist && pwd && ls -a
+            - run: cd tmp && pwd && ls -a
             # - run: cd dist/dist && pwd && ls -a
             # - run: cat ./dist/index.html
 
