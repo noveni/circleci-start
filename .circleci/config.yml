@@ -10,6 +10,7 @@ jobs:
             - run: npm run build
     deploy:
         machine: true
+        working_directory: ~/circleci-start
         steps:
             - checkout
             - run: pwd && ls ./dist
