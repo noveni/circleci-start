@@ -15,7 +15,7 @@ jobs:
         machine: true
         steps:
             - attach_workspace:
-                at: .
+                at: ./dist
             - run: pwd && ls -a
             - run: cd dist && pwd && ls -a
             # - run: cd dist/dist && pwd && ls -a
