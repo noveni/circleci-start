@@ -6,3 +6,19 @@ jobs:
         steps:
             - checkout
             - run: echo "hello world"
+    deploy:
+        machine: true
+        docker:
+            - image: circleci/node:9.3
+        steps:
+            - checkout
+            - run: echo "hello world 2"
+
+workflows:
+    version: 2
+    build-deploy:
+        jobs:
+            - build
+            - deploy:
+                requires:
+                    - build
