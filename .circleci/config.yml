@@ -3,15 +3,16 @@ jobs:
     build:
         docker:
             - image: circleci/node:9.3
+        working_directory: ~/circleci-start
         steps:
             - checkout
-            - run: echo "hello world"
+            - run: npm install
+            - run: npm run build
     deploy:
-        docker:
-            - image: circleci/node:9.3
+        machine: true
         steps:
             - checkout
-            - run: echo "hello world 2"
+            - run: cat ./dist/index.html
 
 workflows:
     version: 2
