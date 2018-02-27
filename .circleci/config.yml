@@ -16,7 +16,7 @@ jobs:
         working_directory: ~/circleci-start
         steps:
             - attach_workspace:
-                at: /circleci-start/dist
+                at: /dist
             - checkout
             - run: pwd && ls ./dist
             # - run: cat ./dist/index.html
