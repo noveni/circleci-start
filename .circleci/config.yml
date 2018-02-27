@@ -9,16 +9,16 @@ jobs:
             - run: npm install
             - run: npm run build
             - persist_to_workspace:
-                root: dist
-                paths: .
+                root: tmp
+                paths: .circleci/config.yml
     deploy:
         machine: true
         working_directory: ~/circleci-start
         steps:
             - attach_workspace:
-                at: dist
+                at: tmp
             - run: pwd && ls -a
-            - run: cd dist && pwd && ls -a
+            # - run: cd dist && pwd && ls -a
             # - run: cd dist/dist && pwd && ls -a
             # - run: cat ./dist/index.html
 
