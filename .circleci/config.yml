@@ -9,7 +9,7 @@ jobs:
             - run: npm install
             - run: npm run build
             - run: mkdir -p tmp
-            - run: cp dist tmp/
+            - run: cp -r dist/ tmp/dist/
             - run: cp .circleci/setup-heroku.sh tmp/
             - persist_to_workspace:
                 root: tmp
