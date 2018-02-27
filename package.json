@@ -1,0 +1,20 @@
+{
+  "name": "circleci-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cp ./src/index-raw.html ./dist/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noveni/circleci-start.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noveni/circleci-start/issues"
+  },
+  "homepage": "https://github.com/noveni/circleci-start#readme"
+}
