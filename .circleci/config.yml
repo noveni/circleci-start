@@ -17,7 +17,8 @@ jobs:
         steps:
             - attach_workspace:
                 at: dist
-            - run: pwd && ls
+            - run: pwd && ls -a
+            - run: pwd && ls -a ./dist
             # - run: cat ./dist/index.html
 
 workflows:
