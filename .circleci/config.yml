@@ -7,13 +7,13 @@ jobs:
         steps:
             - checkout
             - run: npm install
-            - run: pwd && ls
             - run: npm run build
     deploy:
         machine: true
         steps:
             - checkout
-            - run: cat ./dist/index.html
+            - run: pwd && ls
+            # - run: cat ./dist/index.html
 
 workflows:
     version: 2
