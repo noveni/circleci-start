@@ -8,9 +8,14 @@ jobs:
             - checkout
             - run: npm install
             - run: npm run build
+            - run: mkdir -p tmp
+            - run: cp dist tmp/
+            - run: cp .circleci/setup-heroku.sh tmp/
             - persist_to_workspace:
                 root: tmp
-                paths: .circleci/config.yml
+                paths:
+                    - setup-heroku.sh
+                    - dist
     deploy:
         machine: true
         working_directory: ~/circleci-start
