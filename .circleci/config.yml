@@ -20,6 +20,8 @@ jobs:
         machine: true
         working_directory: ~/circleci-start
         steps:
+            - checkout
+            - run: echo "Hello World"
             - attach_workspace:
                 at: tmp
             - run: pwd && ls -a
