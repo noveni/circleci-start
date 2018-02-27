@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/noveni/circleci-start/issues"
   },
-  "homepage": "https://github.com/noveni/circleci-start#readme"
+  "homepage": "https://github.com/noveni/circleci-start#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }

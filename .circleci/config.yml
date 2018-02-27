@@ -21,14 +21,19 @@ jobs:
         working_directory: ~/circleci-start
         steps:
             - checkout
-            - run: echo "Hello World"
+            - add_ssh_keys:
+                fingerprints:
+                    - "cc:40:d1:99:63:e0:1f:cb:6f:0c:32:7b:be:22:2c:87"
             - attach_workspace:
                 at: tmp
-            - run: pwd && ls -a
-            - run: cd tmp && pwd && ls -a
-            - run: cd dist && pwd && ls -a
-            # - run: cd dist/dist && pwd && ls -a
-            # - run: cat ./dist/index.html
+            - run:
+                name: Run Setup Script
+                command: bash tmp/setup-heroku.sh
+            # - run:
+            #     name: Deploy Master to Heroku
+            #     command: |
+            #         heroku fit
+
 
 workflows:
     version: 2
