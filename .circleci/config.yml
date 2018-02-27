@@ -12,7 +12,7 @@ jobs:
         machine: true
         steps:
             - checkout
-            - run: pwd && ls
+            - run: pwd && ls ./dist
             # - run: cat ./dist/index.html
 
 workflows:
