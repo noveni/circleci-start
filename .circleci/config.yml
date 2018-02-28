@@ -36,6 +36,7 @@ jobs:
                 command: |
                     heroku git:remote -a HEROKU_APP
                     git push --force git@heroku.com:$HEROKU_APP HEAD:refs/heads/master
+                    heroku run node index.js
 
 
 workflows:
